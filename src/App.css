@@ -69,3 +69,7 @@ body {
     outline: none;
     cursor: pointer;
 }
+
+#new-quote:hover {
+    opacity: 0.9;
+}
