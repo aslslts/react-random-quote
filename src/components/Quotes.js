@@ -1,4 +1,6 @@
 import React from "react";
+import twitterIcon from "../twitter.svg";
+import tumblrIcon from "../tumblr.svg";
 
 function Quotes() {
   return (
@@ -13,12 +15,12 @@ function Quotes() {
         <div className="social-media">
           <a href="#" id="tweet-quote">
             <span>
-              <img src="" alt="" />{" "}
+              <img src={twitterIcon} alt="" />{" "}
             </span>
           </a>
           <a href="#" id="tumblr-quote">
             <span>
-              <img src="" alt="" />{" "}
+              <img src={tumblrIcon} alt="" />{" "}
             </span>
           </a>
         </div>
