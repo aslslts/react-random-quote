@@ -3,7 +3,7 @@ import twitterIcon from "../twitter.svg";
 import tumblrIcon from "../tumblr.svg";
 
 function Quotes() {
-  const [quote, setQuote] = useState("title");
+  const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
 
   useEffect(() => {
@@ -19,32 +19,38 @@ function Quotes() {
         let dataQuotes = data.quotes;
         let randomNum = Math.floor(Math.random() * dataQuotes.length);
         let randomQuote = dataQuotes[randomNum];
-        console.log(randomQuote);
+        setQuote(randomQuote.quote);
+        setAuthor(randomQuote.author);
       });
+  };
+  const handleClick = () => {
+    getQuote();
   };
 
   return (
     <div id="quote-box">
       <div id="text">
-        <p>lorem30</p>
+        <p>{quote}</p>
       </div>
       <div id="author">
-        <p>John Doe</p>
+        <p>{author}</p>
       </div>
       <div id="buttons">
         <div className="social-media">
-          <a href="#" id="tweet-quote">
+          <a href="https://twitter.com/" id="tweet-quote">
             <span>
               <img src={twitterIcon} alt="" />{" "}
             </span>
           </a>
-          <a href="#" id="tumblr-quote">
+          <a href="https://www.tumblr.com/" id="tumblr-quote">
             <span>
               <img src={tumblrIcon} alt="" />{" "}
             </span>
           </a>
         </div>
-        <button id="new-quote">New Quote</button>
+        <button onClick={handleClick} id="new-quote">
+          New Quote
+        </button>
       </div>
     </div>
   );
