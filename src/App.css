@@ -58,7 +58,7 @@ body {
     width: 1.5rem;
 }
 
-.new-quote {
+#new-quote {
     background: #0059ff;
     border: none;
     color: #fff;
